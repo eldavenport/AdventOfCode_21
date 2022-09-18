@@ -35,7 +35,6 @@ for number in number_data:
         boards[index1][index2][index3] = -1
     for n in range(num_boards):
         for row in range(5):
-            print(np.shape(np.where(boards[n][row][:] == -1))[1])
             if (np.shape(np.where(boards[n][row][:] == -1))[1]) == 5:
                 bingo = n
                 winning_num = number
@@ -54,5 +53,6 @@ for row in range(5):
     for col in range(5):
         if boards[bingo][row][col] != -1:
             puzzle_sum += boards[bingo][row][col]
-
+print("board",bingo)
+print("winnign number", winning_num)
 print(int(puzzle_sum)*int(winning_num))
